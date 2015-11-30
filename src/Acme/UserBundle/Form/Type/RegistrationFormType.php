@@ -22,8 +22,8 @@ class RegistrationFormType extends BaseType
                 ->add('gender', 'choice',array('label' => '性别', 
                     'choices' => array('男' => '男', '女' => '女'),
                     'expanded' => true ))
-                ->add('phone', null, array('label' => '手机', 'translation_domain' => 'FOSUserBundle'))
-                ->add('telephone', null, array('label' => '手机', 'translation_domain' => 'FOSUserBundle'))
+                ->add('phone', null, array('label' => '手机', 'translation_domain' => 'FOSUserBundle','required'=>true))    
+                ->add('telephone', null, array('label' => '手机', 'translation_domain' => 'FOSUserBundle','required'=>true))    
 
             ;
                

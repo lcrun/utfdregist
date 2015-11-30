@@ -42,7 +42,7 @@ registration:
     back: 返回前一页面
     submit: 报名
     flash:
-        user_created: 用户已创建
+        user_created: 用户已创建,已经报名,请往邮箱或者个人中心查看信息
     email:
         subject: %username%，欢迎你
         message: |
