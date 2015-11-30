@@ -174,12 +174,15 @@ use Acme\DemoBundle\Entity\Backend;
                 fputcsv($fp, $formatAnswers);*/
                 
                 $array = array();
-
-
-                 array_unshift($array, iconv('UTF8', 'GBK', $signUp->getUser()->getMoreForHotel()));    
-                array_unshift($array, iconv('UTF8', 'GBK', $signUp->getUser()->getIsSingle()));            
-                array_unshift($array , iconv('UTF8', 'GBK', $signUp->getUser()->getLeaveDate()));
-                array_unshift($array , iconv('UTF8', 'GBK', $signUp->getUser()->getLiveinDate()));
+                   array_unshift($array, iconv('UTF8', 'GBK', $signUp->getUser()->getMoreForHotel()));    
+                array_unshift($array, iconv('UTF8', 'GBK', $signUp->getUser()->getIsSingle()));   
+                
+                if($signUp->getUser()->getLeaveDate())
+                array_unshift($array , iconv('UTF8', 'GBK', $signUp->getUser()->getLeaveDate()->format("Y-m-d")));
+                
+                if($signUp->getUser()->getLiveinDate())
+                array_unshift($array , iconv('UTF8', 'GBK', $signUp->getUser()->getLiveinDate()->format("Y-m-d")));
+                
                 array_unshift($array, iconv('UTF8', 'GBK', $signUp->getUser()->getNeedHotel()));     
                 
                 
@@ -193,12 +196,6 @@ use Acme\DemoBundle\Entity\Backend;
                 array_unshift($array, iconv('UTF8', 'GBK', $signUp->getUser()->getPhone()));      
                 array_unshift($array , iconv('UTF8', 'GBK', $signUp->getUser()->getEmail()));
                 array_unshift($array , iconv('UTF8', 'GBK', $signUp->getUser()->getName()));
-                
-                
-                
-                
-                
-                
                 
               
                  fputcsv($fp, $array);
