@@ -203,7 +203,16 @@ label[for='fos_user_registration_form_gender_0']:after, label[for='fos_user_regi
 ,label[for='fos_user_profile_form_gender_0']:after, label[for='fos_user_profile_form_gender_1']:after{
     content: '';
 }
-#fos_user_registration_form_gender,#fos_user_profile_form_gender,.fos_user_resetting_request #username {
+#fos_user_registration_form_moreForHotel {
+    vertical-align: text-top;
+}
+#fos_user_registration_form_gender,
+#fos_user_profile_form_gender,
+.fos_user_resetting_request #username, 
+#fos_user_registration_form_needHotel,
+#fos_user_registration_form_liveinDate,
+#fos_user_registration_form_leaveDate,
+#fos_user_registration_form_leaveDate{
     display: inline-block;
 }
 .fos_user_resetting_request div:first-child {
