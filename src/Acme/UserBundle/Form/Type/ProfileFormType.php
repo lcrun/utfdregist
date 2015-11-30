@@ -29,12 +29,15 @@ class ProfileFormType extends BaseType
         $this->buildUserForm($builder, $options);
           $builder->add('name', null, array('label' => '姓名', 'translation_domain' => 'FOSUserBundle'))
                   ->add('company', null, array('label' => '学校', 'translation_domain' => 'FOSUserBundle','required'=>true))
+                
+                  ->add('job', null, array('label' => '职务', 'translation_domain' => 'FOSUserBundle','required'=>true))    
                 ->add('position', null, array('label' => '职称', 'translation_domain' => 'FOSUserBundle','required'=>true))
                 ->add('gender', 'choice',array('label' => '性别', 
                     'choices' => array('男' => '男', '女' => '女'),
                     'expanded' => true ))
                 ->add('phone', null, array('label' => '手机', 'translation_domain' => 'FOSUserBundle'))
-                ->add('address', null, array('label' => '单位', 'translation_domain' => 'FOSUserBundle','required'=>true));
+                  ->add('telephone', null, array('label' => '手机', 'translation_domain' => 'FOSUserBundle'))
+                ->add('address', null, array('label' => '部门', 'translation_domain' => 'FOSUserBundle','required'=>true));
 
         $builder->add('current_password', 'password', array(
             'label' => 'form.current_password',

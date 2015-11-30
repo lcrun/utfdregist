@@ -87,6 +87,19 @@ class User extends BaseUser
      */
     private $address;
 
+    
+    
+    /**
+     * @var string
+     */
+    private $job;
+    
+    
+    /**
+     * @var string
+     */
+    private $telephone;
+    
 
     /**
      * Set gender
