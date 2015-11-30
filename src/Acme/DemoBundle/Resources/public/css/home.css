@@ -195,6 +195,14 @@ label.required:after {
     top: 0px;
     color: red;
 }
+ input >  label.required:after {
+    content: '';
+    display:block;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    color: red;
+}
 label[for='fos_user_registration_form_gender_0'], label[for='fos_user_registration_form_gender_1']
 ,label[for='fos_user_profile_form_gender_0'], label[for='fos_user_profile_form_gender_1']{
     width: 1em !important;
@@ -212,7 +220,13 @@ label[for='fos_user_registration_form_gender_0']:after, label[for='fos_user_regi
 #fos_user_registration_form_needHotel,
 #fos_user_registration_form_liveinDate,
 #fos_user_registration_form_leaveDate,
-#fos_user_registration_form_leaveDate{
+#fos_user_registration_form_leaveDate,
+#fos_user_registration_form_isSingle,
+#fos_user_profile_form_needHotel,
+#fos_user_profile_form_liveinDate,
+#fos_user_profile_form_leaveDate,
+#fos_user_profile_form_leaveDate,
+#fos_user_profile_form_isSingle{
     display: inline-block;
 }
 .fos_user_resetting_request div:first-child {
