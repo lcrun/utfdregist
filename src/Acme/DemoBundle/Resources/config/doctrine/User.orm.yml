@@ -28,6 +28,14 @@ Acme\DemoBundle\Entity\User:
         name:
             type: string
             length: '20' 
+        job:
+            type: string
+            length: '100'   
+            nullable: true
+        telephone:
+            type: string
+            length: '100'   
+            nullable: true
         
     oneToMany:
         signUps:
