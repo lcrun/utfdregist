@@ -36,6 +36,25 @@ Acme\DemoBundle\Entity\User:
             type: string
             length: '100'   
             nullable: true
+            
+        needHotel:
+            type: string
+            nullable: true
+        liveinDate:
+            type: datetime
+            nullable: true
+        leaveDate:
+            type: datetime
+            nullable: true
+        isSingle:
+            type: string
+            nullable: true
+        moreForHotel:
+            type: string
+            length: '100'   
+            nullable: true
+
+         
         
     oneToMany:
         signUps:

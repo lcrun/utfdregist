@@ -37,7 +37,28 @@ class ProfileFormType extends BaseType
                     'expanded' => true ))
                 ->add('phone', null, array('label' => '手机', 'translation_domain' => 'FOSUserBundle','required'=>true))    
                   ->add('telephone', null, array('label' => '固话', 'translation_domain' => 'FOSUserBundle','required'=>true))    
-                ->add('address', null, array('label' => '部门', 'translation_domain' => 'FOSUserBundle','required'=>true));
+                ->add('address', null, array('label' => '部门', 'translation_domain' => 'FOSUserBundle','required'=>true))
+                
+                
+                                ->add('needHotel', 'choice',array('label' => '住宿', 
+                    'choices' => array('需要' => '需要', '不需要' => '不需要'),
+                    'expanded' => true ))
+                
+                 ->add('liveinDate', 'date', array('label' => '入住时间：',))
+                ->add('leaveDate', 'date', array('label' => '离开时间：',))
+                
+                 ->add('isSingle', 'choice',array('label' => '单人房间', 
+                    'choices' => array('需要' => '需要', '不需要' => '不需要'),
+                    'expanded' => true ))
+                 ->add('moreForHotel', 'textarea', array('label' => '备注'))    
+                
+                
+                
+                
+                
+                
+                
+                ;
 
         $builder->add('current_password', 'password', array(
             'label' => 'form.current_password',

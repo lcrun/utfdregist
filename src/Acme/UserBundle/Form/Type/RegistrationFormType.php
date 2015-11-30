@@ -24,7 +24,21 @@ class RegistrationFormType extends BaseType
                     'expanded' => true ))
                 ->add('phone', null, array('label' => '手机', 'translation_domain' => 'FOSUserBundle','required'=>true))    
                 ->add('telephone', null, array('label' => '固话', 'translation_domain' => 'FOSUserBundle','required'=>true,'attr'=>array('placeHolder' => '请留下您的办工电话')))
-
+                
+                
+                ->add('needHotel', 'choice',array('label' => '住宿', 
+                    'choices' => array('需要' => '需要', '不需要' => '不需要'),
+                    'expanded' => true ))
+                
+                 ->add('liveinDate', 'date', array('label' => '入住时间：',))
+                ->add('leaveDate', 'date', array('label' => '离开时间：',))
+                
+                 ->add('isSingle', 'choice',array('label' => '单人房间', 
+                    'choices' => array('需要' => '需要', '不需要' => '不需要'),
+                    'expanded' => true ))
+                 ->add('moreForHotel', 'textarea', array('label' => '备注'))    
+                
+                
             ;
                
         
