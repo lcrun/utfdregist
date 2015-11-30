@@ -14,7 +14,7 @@ class RegistrationFormType extends BaseType
         $builder->remove('username');
         $builder->add('name', null, array('label' => '姓名', 'translation_domain' => 'FOSUserBundle'))
                 ->add('company', null, array('label' => '学校', 'translation_domain' => 'FOSUserBundle','required'=>true))
-                ->add('address', null, array('label' => '部门', 'translation_domain' => 'FOSUserBundle','required'=>true,'placeholder' => '如:数学系或者教务处'))
+                ->add('address', null, array('label' => '部门', 'translation_domain' => 'FOSUserBundle','required'=>true,'attr'=>array('placeHolder' => '如:数学系或者教务处')))
                  
                  ->add('job', null, array('label' => '职务', 'translation_domain' => 'FOSUserBundle','required'=>true))    
                  ->add('position', null, array('label' => '职称', 'translation_domain' => 'FOSUserBundle','required'=>true))    
