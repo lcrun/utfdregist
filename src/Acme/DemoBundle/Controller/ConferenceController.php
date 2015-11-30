@@ -174,14 +174,32 @@ use Acme\DemoBundle\Entity\Backend;
                 fputcsv($fp, $formatAnswers);*/
                 
                 $array = array();
-                array_unshift($array , iconv('UTF8', 'GBK', $signUp->getUser()->getAddress()));
+
+
+                 array_unshift($array, iconv('UTF8', 'GBK', $signUp->getUser()->getMoreForHotel()));    
+                array_unshift($array, iconv('UTF8', 'GBK', $signUp->getUser()->getIsSingle()));            
+                array_unshift($array , iconv('UTF8', 'GBK', $signUp->getUser()->getLeaveDate()));
+                array_unshift($array , iconv('UTF8', 'GBK', $signUp->getUser()->getLiveinDate()));
+                array_unshift($array, iconv('UTF8', 'GBK', $signUp->getUser()->getNeedHotel()));     
+                
+                
+                 array_unshift($array , iconv('UTF8', 'GBK', $signUp->getUser()->getAddress()));
                 array_unshift($array , iconv('UTF8', 'GBK', $signUp->getUser()->getPosition()));
+                 array_unshift($array , iconv('UTF8', 'GBK', $signUp->getUser()-> getJob()));
                 array_unshift($array , iconv('UTF8', 'GBK', $signUp->getUser()-> getCompany()));
                 array_unshift($array , iconv('UTF8', 'GBK', $signUp->getUser()->getGender()));
                 
+                array_unshift($array , iconv('UTF8', 'GBK', $signUp->getUser()->getTelephone()));   
                 array_unshift($array, iconv('UTF8', 'GBK', $signUp->getUser()->getPhone()));      
                 array_unshift($array , iconv('UTF8', 'GBK', $signUp->getUser()->getEmail()));
                 array_unshift($array , iconv('UTF8', 'GBK', $signUp->getUser()->getName()));
+                
+                
+                
+                
+                
+                
+                
               
                  fputcsv($fp, $array);
                 
