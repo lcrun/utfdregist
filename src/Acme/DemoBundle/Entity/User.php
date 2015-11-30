@@ -302,4 +302,149 @@ class User extends BaseUser
     {
         return $this->telephone;
     }
+    /**
+     * @var string
+     */
+    private $needHotel;
+
+    /**
+     * @var \DateTime
+     */
+    private $liveinDate;
+
+    /**
+     * @var \DateTime
+     */
+    private $leaveDate;
+
+    /**
+     * @var string
+     */
+    private $isSingle;
+
+    /**
+     * @var string
+     */
+    private $moreForHotel;
+
+
+    /**
+     * Set needHotel
+     *
+     * @param string $needHotel
+     *
+     * @return User
+     */
+    public function setNeedHotel($needHotel)
+    {
+        $this->needHotel = $needHotel;
+
+        return $this;
+    }
+
+    /**
+     * Get needHotel
+     *
+     * @return string
+     */
+    public function getNeedHotel()
+    {
+        return $this->needHotel;
+    }
+
+    /**
+     * Set liveinDate
+     *
+     * @param \DateTime $liveinDate
+     *
+     * @return User
+     */
+    public function setLiveinDate($liveinDate)
+    {
+        $this->liveinDate = $liveinDate;
+
+        return $this;
+    }
+
+    /**
+     * Get liveinDate
+     *
+     * @return \DateTime
+     */
+    public function getLiveinDate()
+    {
+        return $this->liveinDate;
+    }
+
+    /**
+     * Set leaveDate
+     *
+     * @param \DateTime $leaveDate
+     *
+     * @return User
+     */
+    public function setLeaveDate($leaveDate)
+    {
+        $this->leaveDate = $leaveDate;
+
+        return $this;
+    }
+
+    /**
+     * Get leaveDate
+     *
+     * @return \DateTime
+     */
+    public function getLeaveDate()
+    {
+        return $this->leaveDate;
+    }
+
+    /**
+     * Set isSingle
+     *
+     * @param string $isSingle
+     *
+     * @return User
+     */
+    public function setIsSingle($isSingle)
+    {
+        $this->isSingle = $isSingle;
+
+        return $this;
+    }
+
+    /**
+     * Get isSingle
+     *
+     * @return string
+     */
+    public function getIsSingle()
+    {
+        return $this->isSingle;
+    }
+
+    /**
+     * Set moreForHotel
+     *
+     * @param string $moreForHotel
+     *
+     * @return User
+     */
+    public function setMoreForHotel($moreForHotel)
+    {
+        $this->moreForHotel = $moreForHotel;
+
+        return $this;
+    }
+
+    /**
+     * Get moreForHotel
+     *
+     * @return string
+     */
+    public function getMoreForHotel()
+    {
+        return $this->moreForHotel;
+    }
 }
