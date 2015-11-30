@@ -195,7 +195,7 @@ label.required:after {
     top: 0px;
     color: red;
 }
- input >  label.required:after {
+ input +  label.required:after {
     content: '';
     display:block;
     position: absolute;
