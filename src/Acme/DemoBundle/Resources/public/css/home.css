@@ -180,6 +180,11 @@ table tr td {
    text-align: right;
    margin-right: 10px;
 }
+#fos_user_registration_form input + label, #fos_user_profile_form input +  label {
+   width: auto; 
+   text-align: right;
+   margin-right: 10px;
+}
 
 label.required {
     display: inline-block;
