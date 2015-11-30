@@ -175,6 +175,9 @@ table tr td {
     padding: 5px 10px;
     
 }
+input[type="radio"][value=""], input[type="radio"][value=""] + label {
+    display: none;
+}
 #fos_user_registration_form label, #fos_user_profile_form label {
    width: 6em; 
    text-align: right;
