@@ -77,3 +77,21 @@ _mail_participated:
 _download_participated:
     path:    /admin/downparticipated
     defaults: { _controller: AcmeDemoBundle:Default:downParticipated}  
+   
+_regist_for_other:
+    path:    /registrationForOther
+    defaults: { _controller: AcmeDemoBundle:RegistrationForOther:regist}  
+    
+    
+
+_regist_for_other_show:
+    path:    /registrationForOtherShow
+    defaults: { _controller: AcmeDemoBundle:RegistrationForOther:registrationForOtherSignShow}  
+    
+_regist_for_other_dissign:
+    path:    /registrationForOtherDissign/{id}
+    defaults: { _controller: AcmeDemoBundle:RegistrationForOther:registrationForOtherDissign} 
+    
+_regist_for_other_sign:
+    path:    /registrationForOtherSign/{id}
+    defaults: { _controller: AcmeDemoBundle:RegistrationForOther:registrationForOtherSign}  

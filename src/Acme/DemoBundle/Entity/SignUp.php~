@@ -140,4 +140,33 @@ class SignUp
     {
         return $this->conference;
     }
+    /**
+     * @var \Acme\DemoBundle\Entity\User
+     */
+    private $creator;
+
+
+    /**
+     * Set creator
+     *
+     * @param \Acme\DemoBundle\Entity\User $creator
+     *
+     * @return SignUp
+     */
+    public function setCreator(\Acme\DemoBundle\Entity\User $creator = null)
+    {
+        $this->creator = $creator;
+
+        return $this;
+    }
+
+    /**
+     * Get creator
+     *
+     * @return \Acme\DemoBundle\Entity\User
+     */
+    public function getCreator()
+    {
+        return $this->creator;
+    }
 }

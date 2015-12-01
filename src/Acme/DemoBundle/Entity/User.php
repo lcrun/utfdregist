@@ -447,4 +447,72 @@ class User extends BaseUser
     {
         return $this->moreForHotel;
     }
+    /**
+     * @var \Acme\DemoBundle\Entity\User
+     */
+    private $creator;
+
+
+    /**
+     * Set creator
+     *
+     * @param \Acme\DemoBundle\Entity\User $creator
+     *
+     * @return User
+     */
+    public function setCreator(\Acme\DemoBundle\Entity\User $creator = null)
+    {
+        $this->creator = $creator;
+
+        return $this;
+    }
+
+    /**
+     * Get creator
+     *
+     * @return \Acme\DemoBundle\Entity\User
+     */
+    public function getCreator()
+    {
+        return $this->creator;
+    }
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     */
+    private $subUsers;
+
+
+    /**
+     * Add subUser
+     *
+     * @param \Acme\DemoBundle\Entity\User $subUser
+     *
+     * @return User
+     */
+    public function addSubUser(\Acme\DemoBundle\Entity\User $subUser)
+    {
+        $this->subUsers[] = $subUser;
+
+        return $this;
+    }
+
+    /**
+     * Remove subUser
+     *
+     * @param \Acme\DemoBundle\Entity\User $subUser
+     */
+    public function removeSubUser(\Acme\DemoBundle\Entity\User $subUser)
+    {
+        $this->subUsers->removeElement($subUser);
+    }
+
+    /**
+     * Get subUsers
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getSubUsers()
+    {
+        return $this->subUsers;
+    }
 }

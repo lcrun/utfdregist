@@ -1,0 +1,15 @@
+# This file is auto-generated during the composer install
+parameters:
+    database_host: 127.0.0.1
+    database_port: null
+    database_name: regist
+    database_user: root
+    database_password: 123456
+    mailer_transport: smtp
+    mailer_host: mail.ustc.edu.cn
+    mailer_user: ctl_admin@ustc.edu.cn
+    mailer_password: ctladmin208
+    router.request_context.host: ctl.ustc.edu.cn
+    router.request_context.scheme: http
+    router.request_context.http_port: 80
+    secret: 123

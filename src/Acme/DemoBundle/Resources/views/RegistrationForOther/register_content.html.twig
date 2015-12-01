@@ -1,0 +1,8 @@
+{% trans_default_domain 'FOSUserBundle' %}
+
+<form action="{{ path('_regist_for_other') }}" method="POST">
+    {{ form_widget(form) }}
+        <div>
+            <input type="submit" value="submit" />
+        </div>
+    </form>    

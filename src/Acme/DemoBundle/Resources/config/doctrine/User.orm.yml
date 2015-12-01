@@ -60,4 +60,20 @@ Acme\DemoBundle\Entity\User:
         signUps:
             targetEntity: SignUp
             mappedBy: user
+        subUsers:
+            targetEntity: User
+            mappedBy: creator
+    
+    
+    
+    
+    
+    manyToOne:
+        creator:
+            inversedBy: subUsers
+            targetEntity: User
+            joinColumn:
+                name: creator_id
+                referencedColumnName: id
+  
     

@@ -216,8 +216,16 @@ table tr td {
     padding: 5px 10px;
     
 }
+input[type="radio"][value=""], input[type="radio"][value=""] + label {
+    display: none;
+}
 #fos_user_registration_form label, #fos_user_profile_form label {
    width: 6em; 
+   text-align: right;
+   margin-right: 10px;
+}
+#fos_user_registration_form input + label, #fos_user_profile_form input +  label {
+   width: auto; 
    text-align: right;
    margin-right: 10px;
 }
@@ -236,6 +244,14 @@ label.required:after {
     top: 0px;
     color: red;
 }
+ input +  label.required:after {
+    content: '';
+    display:block;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    color: red;
+}
 label[for='fos_user_registration_form_gender_0'], label[for='fos_user_registration_form_gender_1']
 ,label[for='fos_user_profile_form_gender_0'], label[for='fos_user_profile_form_gender_1']{
     width: 1em !important;
@@ -244,7 +260,22 @@ label[for='fos_user_registration_form_gender_0']:after, label[for='fos_user_regi
 ,label[for='fos_user_profile_form_gender_0']:after, label[for='fos_user_profile_form_gender_1']:after{
     content: '';
 }
-#fos_user_registration_form_gender,#fos_user_profile_form_gender,.fos_user_resetting_request #username {
+#fos_user_registration_form_moreForHotel {
+    vertical-align: text-top;
+}
+#fos_user_registration_form_gender,
+#fos_user_profile_form_gender,
+.fos_user_resetting_request #username, 
+#fos_user_registration_form_needHotel,
+#fos_user_registration_form_liveinDate,
+#fos_user_registration_form_leaveDate,
+#fos_user_registration_form_leaveDate,
+#fos_user_registration_form_isSingle,
+#fos_user_profile_form_needHotel,
+#fos_user_profile_form_liveinDate,
+#fos_user_profile_form_leaveDate,
+#fos_user_profile_form_leaveDate,
+#fos_user_profile_form_isSingle{
     display: inline-block;
 }
 .fos_user_resetting_request div:first-child {

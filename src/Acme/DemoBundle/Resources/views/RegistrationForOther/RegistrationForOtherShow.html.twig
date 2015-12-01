@@ -1,0 +1,42 @@
+{% extends "AcmeUserBundle::layout.html.twig" %}
+
+{% set target = 'signUp' %}
+
+{% block title %}帮报名{% endblock %}
+
+{% block stylesheets_child %}
+    
+{% endblock %}
+
+{% block content %}
+  <div class="admin_right">
+     <div class="content">
+         
+         
+    <h2>为他人会议报名情况</h2>
+    <table>
+        <tr>
+            <td>序号</td>
+            <td>姓名</td>
+            <td>报名状态</td>
+            <td>邮箱</td>
+            <td>操作</td>
+        </tr>
+    {%set i=0%}
+    {%for user in subUsers%}
+        <tr>
+            <td>{{i + 1}}</td>
+            <td>{{user.getName}}</td>
+            <td>{{status[i]}}</td>
+            <td>{{user.getEmail}}</td>
+            <td>{%if status[i]=='已报名'%}<a href="{{ path('_regist_for_other_dissign', {'id': user.getId})  }}" class="signup_link" >取消报名</a>{%elseif status[i]=='未报名'%}<a href="{{ path('_regist_for_other_sign', {'id': user.getId})  }}" class="signup_link" >报名</a>{%elseif  status[i]=='已截止' %} -- {%endif%}</td>
+        {%set i=i+1%}
+        </tr>
+    {%endfor%}
+    </table>
+    
+    
+    <h2>  <a  href="{{ path('_regist_for_other') }}" class="signup_link" >添加报名</a></h2> 
+    </div>
+ </div>
+{% endblock %}
