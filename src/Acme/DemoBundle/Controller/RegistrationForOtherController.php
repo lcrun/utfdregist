@@ -189,8 +189,12 @@ use Symfony\Component\Security\Core\Exception\AccessDeniedException;
                         'conference' => $this->getCurrentConference()
                   )
             );
-         
-            if  ($this->getCurrentConference()->getDueDate() < $now)
+            
+         if   ($this->getCurrentConference()  == null)
+                { 
+                $status[] = "暂无会议";
+            } 
+           else  if  ($this->getCurrentConference()->getDueDate() < $now)
                 { 
                 $status[] = "已截止";
             } else if($signUp ==  null){
