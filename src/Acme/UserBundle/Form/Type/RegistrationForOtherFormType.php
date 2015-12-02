@@ -19,7 +19,7 @@ class RegistrationForOtherFormType  extends AbstractType
     {
        // parent::buildForm($builder, $options);
    
-        $builder  ->add('email', 'email', array('label' => 'form.email', 'translation_domain' => 'FOSUserBundle'))
+        $builder  ->add('email', 'email', array('label' => '邮箱', 'translation_domain' => 'FOSUserBundle'))
                 
                 
                 ->add('name', null, array('label' => '姓名', 'translation_domain' => 'FOSUserBundle'))
@@ -37,14 +37,14 @@ class RegistrationForOtherFormType  extends AbstractType
                 
                 
                 ->add('needHotel', 'choice',array('label' => '住宿', 
-                    'choices' => array('需要' => '需要', '不需要' => '不需要'),
+                    'choices' => array('需要住宿' => '需要', '不需要住宿' => '不需要'),
                     'expanded' => true ,'required'=>false))  
                 
                  ->add('liveinDate', 'date', array('label' => '入住时间：','required'=>false))  
                 ->add('leaveDate', 'date', array('label' => '离开时间：','required'=>false))  
                 
                  ->add('isSingle', 'choice',array('label' => '单人房间', 
-                    'choices' => array('需要' => '需要', '不需要' => '不需要'),
+                    'choices' => array('需要单间' => '需要', '不需要单间' => '不需要'),
                     'expanded' => true ,'required'=>false))  
                  ->add('moreForHotel', 'textarea', array('label' => '备注','required'=>false))    
 
