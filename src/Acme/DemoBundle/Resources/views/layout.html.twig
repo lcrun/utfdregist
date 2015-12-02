@@ -15,7 +15,6 @@
         filter='cssrewrite' %}
         <link rel="stylesheet" href="{{ asset_url }}" />
     {% endstylesheets %}
-
     {% image '@AcmeDemoBundle/Resources/public/images/ustc.ico' %}
         <link rel="icon" href="{{ asset_url }}" type="image/x-icon" />
     {% endimage %}
@@ -28,7 +27,7 @@
         <div id="header">
             <div class="center_content">
             {% block header %}
-                <img class='logo' src="/utfdregist/logo.png"/>
+                <img class='logo' src="/utfdregist/ustclogo.png"/>
                 <div class="user_info">
                     {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
                         <span>您好，{{app.user.getName()}}</span>
@@ -39,7 +38,6 @@
                            class="button button-rounded button-flat1">登 录</a>
                     {% endif %}
                 </div>
-                <nav>
                     <ul>
                         {% block navigation_more %}
                             <li><a  href="{{ path('acme_demo_homepage') }}">首页</a></li>
@@ -57,8 +55,7 @@
                             {% endblock %}
                             <li><a    href="{{ path('acme_demo_connact_us') }}">联系我们</a></li>
                         {% endblock %}
-                    </ul>     
-                </nav>
+                    </ul>   
             {% endblock %}
             </div>
         </div>

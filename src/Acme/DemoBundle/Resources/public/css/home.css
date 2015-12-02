@@ -32,7 +32,7 @@ ul,li {
 /* 页面头部样式 */
 #header {
   width: 100%;
-  background-color: #4c8d68;
+  background-color: #fff;
  // overflow: hidden;
 }
 
@@ -43,29 +43,40 @@ ul,li {
 
 #header .logo {
   float: left;
+  width:280px;
+  height:80px;
 }
 
 #header , #header  ul, #header  ul li {
   float: left;
 }
-
+#header ul{
+    list-style: none;
+    width:100%;
+    clear:both;
+    background-color: #06489d;
+    border:1px #d5d5d5 solid;
+    -webkit-border-radius:10px;
+    -moz-border-radius:10px;
+    border-radius:10px;
+    padding:0 20px;
+}
 #header ul li {
-  display: block;
-  margin: 0 10px;
-  line-height: 80px;
   font-size: 18px;
   font-weight: bold;
 }
 #header  ul li a {
-  display: block;
-  height: 80px;
+  display: inline-block;
+  height: 40px;
+  line-height: 40px;
   color: #fff;
   text-decoration: none;
+  padding:0 20px;
 }
 #header ul li a:hover{
-  color: #fff;
-  border-bottom: 3px solid #fff;
-  text-decoration: none;
+  color: #06489d;
+  background:url("/utfdregist/curMenu2.png") repeat-x;
+
 }
 #header ul li a:linked,
 #header  ul li a:focus{
@@ -81,7 +92,6 @@ ul,li {
 #header .user_info .button-flat1 {
   background-color: transparent;
   font-weight: bold;
-  color: white;
 }
 
 #header .user_info .button-flat1:hover {
