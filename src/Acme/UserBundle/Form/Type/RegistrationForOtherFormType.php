@@ -38,14 +38,16 @@ class RegistrationForOtherFormType  extends AbstractType
                 
                 ->add('needHotel', 'choice',array('label' => '住宿', 
                     'choices' => array('需要住宿' => '需要住宿', '不需要住宿' => '不需要住宿'),
-                    'expanded' => true ,'required'=>false))  
+                    'expanded' => true ,'required'=>false,
+                'empty_value' => false))  
                 
                  ->add('liveinDate', 'date', array('label' => '入住时间：','required'=>false))  
                 ->add('leaveDate', 'date', array('label' => '离开时间：','required'=>false))  
                 
                  ->add('isSingle', 'choice',array('label' => '单人房间', 
                     'choices' => array('需要单间' => '需要单间', '不需要单间' => '不需要单间'),
-                    'expanded' => true ,'required'=>false))  
+                    'expanded' => true ,'required'=>false,
+                'empty_value' => false))  
                  ->add('moreForHotel', 'textarea', array('label' => '备注','required'=>false))    
 
             ;
