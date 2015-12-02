@@ -41,26 +41,26 @@
     
     
     <div class='profile_item'>
-        <label>{{ '单位'|trans }}</label>
+        <label>{{ '住宿'|trans }}</label>
         <span>{{ user.needHotel }}</span>
     </div>
 
     <div class='profile_item'>
-        <label>{{ '单位'|trans }}</label>
-        <span>{{ user.liveinDate }}</span>
+        <label>{{ '入住'|trans }}</label>
+        <span>{{ user.liveinDate|date('Y-m-d H:i')}}</span>
     </div>
     
      <div class='profile_item'>
-        <label>{{ '单位'|trans }}</label>
-        <span>{{ user.leaveDate }}</span>
+        <label>{{ '退房'|trans }}</label>
+        <span>{{ user.leaveDate|date('Y-m-d H:i')}}</span>
     </div>
     
     <div class='profile_item'>
-        <label>{{ '单位'|trans }}</label>
+        <label>{{ '单间'|trans }}</label>
         <span>{{ user.isSingle }}</span>
     </div>
         <div class='profile_item'>
-        <label>{{ '单位'|trans }}</label>
+        <label>{{ '备注'|trans }}</label>
         <span>{{ user.moreForHotel }}</span>
     </div>
 

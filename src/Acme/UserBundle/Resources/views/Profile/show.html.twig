@@ -2,4 +2,5 @@
 
 {% block fos_user_content %}
 {% include "FOSUserBundle:Profile:show_content.html.twig" %}
+ <a  href="{{ path('fos_user_profile_edit') }}" class="button button-rounded button-flat2">修改信息</a>  
 {% endblock fos_user_content %}
