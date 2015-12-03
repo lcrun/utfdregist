@@ -69,25 +69,55 @@ class RegistrationForOtherFormType  extends AbstractType
                  ->add('job', null, array('label' => '职务', 'translation_domain' => 'FOSUserBundle','required'=>true))    
                  ->add('position', null, array('label' => '职称', 'translation_domain' => 'FOSUserBundle','required'=>true))    
                 
-                ->add('gender', 'choice',array('label' => '性别', 
-                    'choices' => array('男' => '男', '女' => '女'),
-                    'expanded' => true ))
+           //     ->add('gender', 'choice',array('label' => '性别', 
+            //        'choices' => array(),
+            //        'expanded' => true ))
+                
+                                ->add('gender', 'choice', 
+                    array('label' => '性别',  
+                        'choices' => array(           
+                           '男' => '男', '女' => '女'
+                        ),
+                        'placeholder' => '请选择'
+                    ))
+                
+                
                 ->add('phone', null, array('label' => '手机', 'translation_domain' => 'FOSUserBundle','required'=>true))    
                 ->add('telephone', null, array('label' => '固话', 'translation_domain' => 'FOSUserBundle','required'=>true,'attr'=>array('placeHolder' => '请留下您的办工电话')))
                 
                 
-                ->add('needHotel', 'choice',array('label' => '住宿', 
-                    'choices' => array('需要住宿' => '需要住宿', '不需要住宿' => '不需要住宿'),
-                    'expanded' => true ,'required'=>false,
-                'empty_value' => false))  
+          //      ->add('needHotel', 'choice',array('label' => '住宿', 
+          //          'choices' => array('需要住宿' => '需要住宿', '不需要住宿' => '不需要住宿'),
+            //        'expanded' => true ,'required'=>false,
+          //      'empty_value' => false))  
+                
+                
+                          ->add('needHotel', 'choice', 
+                    array('label' => '住宿',  
+                        'choices' => array(           
+                           '需要住宿' => '需要住宿', '不需要住宿' => '不需要住宿'
+                        ),
+                        'placeholder' => '请选择'
+                    ))
+                
                 
                  ->add('liveinDate', 'date', array('label' => '入住时间：','required'=>false))  
                 ->add('leaveDate', 'date', array('label' => '离开时间：','required'=>false))  
                 
-                 ->add('isSingle', 'choice',array('label' => '单人房间', 
-                    'choices' => array('需要单间' => '需要单间', '不需要单间' => '不需要单间'),
-                    'expanded' => true ,'required'=>false,
-                'empty_value' => false))  
+          //       ->add('isSingle', 'choice',array('label' => '单人房间', 
+         //           'choices' => array('需要单间' => '需要单间', '不需要单间' => '不需要单间'),
+         //           'expanded' => true ,'required'=>false,
+           //     'empty_value' => false))  
+                
+                       ->add('isSingle', 'choice', 
+                    array('label' => '单人房间',  
+                        'choices' => array(           
+                           '需要单间' => '需要单间', '不需要单间' => '不需要单间'
+                        ),
+                        'placeholder' => '请选择'
+                    ))
+                
+                
                  ->add('moreForHotel', 'textarea', array('label' => '备注','required'=>false))    
 
             ;
