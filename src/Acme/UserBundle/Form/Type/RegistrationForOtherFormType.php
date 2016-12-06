@@ -83,7 +83,7 @@ class RegistrationForOtherFormType  extends AbstractType
                 
                 
                 ->add('phone', null, array('label' => '手机', 'translation_domain' => 'FOSUserBundle','required'=>true))    
-                ->add('telephone', null, array('label' => '固话', 'translation_domain' => 'FOSUserBundle','required'=>true,'attr'=>array('placeHolder' => '请留下您的办工电话')))
+                ->add('telephone', null, array('label' => '固话', 'translation_domain' => 'FOSUserBundle','required'=>true,'attr'=>array('placeHolder' => '请留下您的办公电话')))
                 
                 
           //      ->add('needHotel', 'choice',array('label' => '住宿', 
