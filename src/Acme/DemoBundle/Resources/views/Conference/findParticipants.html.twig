@@ -13,8 +13,10 @@
  <div class="admin_right">
     <div class="content">
         <h2>参加会议名单</h2>
+        {% set i = 0 %}
         <table class="participants_tab">
             <tr>
+                <th>序号</th>
                 <th>姓名</th>
                 <th>性别</th>
                 <th>电话</th>
@@ -26,6 +28,7 @@
             </tr>
             {%for user in users %}
             <tr>
+                <td>{{i+1}}{% set i = i+1 %}</td>
                 <td>{{user.name}}</td>
                 <td>{{user.gender}}</td>
                 <td>{{user.phone}}</td>
