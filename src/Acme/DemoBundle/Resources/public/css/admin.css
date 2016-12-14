@@ -101,6 +101,9 @@ and open the template in the editor.
   height: 40px;
   text-align: left;
 }
+.admin_right .participants_tab{
+  width: 100%;
+}
 .admin_right .participants_tab th{
   border: 1px solid;
   text-align: center;
