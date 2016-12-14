@@ -95,3 +95,7 @@ _regist_for_other_dissign:
 _regist_for_other_sign:
     path:    /registrationForOtherSign/{id}
     defaults: { _controller: AcmeDemoBundle:RegistrationForOther:registrationForOtherSign}  
+
+_findParticipants:
+    path:    /findParticipants/{id}
+    defaults: { _controller: AcmeDemoBundle:Conference:findParticipants}

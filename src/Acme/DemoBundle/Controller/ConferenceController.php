@@ -149,15 +149,14 @@ use Acme\DemoBundle\Entity\Backend;
         }*/
 
         $response = new StreamedResponse(function () use ($em, $id) {
-            $signUps = $em->getRepository("AcmeDemoBundle:SignUp")->findBy(array(
-                'conference' => $id,
-               
-            ));
+
+            $query = $em->createQuery('SELECT u FROM AcmeDemoBundle:User u INNER JOIN AcmeDemoBundle:SignUp s with u.id = s.user WHERE s.conference = :id')->setParameter('id',$id);
+            $users = $query->getResult();
             
             $fp = fopen('php://output', 'r+');
             
 
-            foreach ($signUps as $signUp) {
+            foreach ($users as $user) {
                 /*
                 //shuzhu这数组这 中 取出列
                 $answers = array_column($result->getAnswer(), 'answer');
@@ -174,28 +173,28 @@ use Acme\DemoBundle\Entity\Backend;
                 fputcsv($fp, $formatAnswers);*/
                 
                 $array = array();
-                   array_unshift($array, iconv('UTF8', 'GBK', $signUp->getUser()->getMoreForHotel()));    
-                array_unshift($array, iconv('UTF8', 'GBK', $signUp->getUser()->getIsSingle()));   
+                   array_unshift($array, iconv('UTF8', 'GBK', $user->getMoreForHotel()));    
+                array_unshift($array, iconv('UTF8', 'GBK', $user->getIsSingle()));   
                 
-                if($signUp->getUser()->getLeaveDate())
-                array_unshift($array , iconv('UTF8', 'GBK', $signUp->getUser()->getLeaveDate()->format("Y-m-d")));
+                if($user->getLeaveDate())
+                array_unshift($array , iconv('UTF8', 'GBK', $user->getLeaveDate()->format("Y-m-d")));
                 
-                if($signUp->getUser()->getLiveinDate())
-                array_unshift($array , iconv('UTF8', 'GBK', $signUp->getUser()->getLiveinDate()->format("Y-m-d")));
+                if($user->getLiveinDate())
+                array_unshift($array , iconv('UTF8', 'GBK', $user->getLiveinDate()->format("Y-m-d")));
                 
-                array_unshift($array, iconv('UTF8', 'GBK', $signUp->getUser()->getNeedHotel()));     
+                array_unshift($array, iconv('UTF8', 'GBK', $user->getNeedHotel()));     
                 
                 
-                 array_unshift($array , iconv('UTF8', 'GBK', $signUp->getUser()->getAddress()));
-                array_unshift($array , iconv('UTF8', 'GBK', $signUp->getUser()->getPosition()));
-                 array_unshift($array , iconv('UTF8', 'GBK', $signUp->getUser()-> getJob()));
-                array_unshift($array , iconv('UTF8', 'GBK', $signUp->getUser()-> getCompany()));
-                array_unshift($array , iconv('UTF8', 'GBK', $signUp->getUser()->getGender()));
+                 array_unshift($array , iconv('UTF8', 'GBK', $user->getAddress()));
+                array_unshift($array , iconv('UTF8', 'GBK', $user->getPosition()));
+                 array_unshift($array , iconv('UTF8', 'GBK', $user-> getJob()));
+                array_unshift($array , iconv('UTF8', 'GBK', $user-> getCompany()));
+                array_unshift($array , iconv('UTF8', 'GBK', $user->getGender()));
                 
-                array_unshift($array , iconv('UTF8', 'GBK', $signUp->getUser()->getTelephone()));   
-                array_unshift($array, iconv('UTF8', 'GBK', $signUp->getUser()->getPhone()));      
-                array_unshift($array , iconv('UTF8', 'GBK', $signUp->getUser()->getEmail()));
-                array_unshift($array , iconv('UTF8', 'GBK', $signUp->getUser()->getName()));
+                array_unshift($array , iconv('UTF8', 'GBK', $user->getTelephone()));   
+                array_unshift($array, iconv('UTF8', 'GBK', $user->getPhone()));      
+                array_unshift($array , iconv('UTF8', 'GBK', $user->getEmail()));
+                array_unshift($array , iconv('UTF8', 'GBK', $user->getName()));
                 
               
                  fputcsv($fp, $array);
@@ -209,6 +208,16 @@ use Acme\DemoBundle\Entity\Backend;
         $response->headers->set('Content-Disposition', 'attachment; filename="export.csv"');
 
         return $response;
+    }
+
+    public function findParticipantsAction($id){
+        $em = $this->getDoctrine()->getManager();
+
+        $query = $em->createQuery('SELECT u FROM AcmeDemoBundle:User u INNER JOIN AcmeDemoBundle:SignUp s with u.id = s.user WHERE s.conference = :id')->setParameter('id',$id);
+        $users = $query->getResult();
+
+        return $this->render('AcmeDemoBundle:Conference:findParticipants.html.twig',array('users'=>$users));
+
     }
     
 }

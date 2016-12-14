@@ -1,0 +1,43 @@
+
+{% extends "AcmeDemoBundle::layout.html.twig" %}
+
+{% set target = 'handle' %}
+
+{% block title %}管理员主页{% endblock %}
+
+{% block stylesheets_child %}
+    
+{% endblock %}
+
+{% block content %}
+ <div class="admin_right">
+    <div class="content">
+        <h2>参加会议名单</h2>
+        <table class="participants_tab">
+            <tr>
+                <th>姓名</th>
+                <th>性别</th>
+                <th>电话</th>
+                <th>学校</th>
+                <th>邮件</th>
+                <th>职称</th>
+                <th>学院</th>
+                <th>住宿</th>
+            </tr>
+            {%for user in users %}
+            <tr>
+                <td>{{user.name}}</td>
+                <td>{{user.gender}}</td>
+                <td>{{user.phone}}</td>
+                <td>{{user.company}}</td>
+                <td>{{user.email}}</td>
+                <td>{{user.position}}</td>
+                <td>{{user.address}}</td>
+                <td>{{user.needHotel}}</td>
+            </tr>
+            {%endfor%}
+            
+        </table>
+    </div>
+</div>
+{% endblock %}

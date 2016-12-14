@@ -18,9 +18,22 @@
 
 .fieldset_submit{position:relative;}
 
+.login_item{
+    margin-top: 15px;
+}
 
-.fieldset_submit a{position:absolute; top:0px;}
+.fieldset_submit a{
+    position:absolute; 
+    top:0px;
+    height: 34px;
+}
 
+.fieldset_submit .tip{
+    margin-top: 30px;
+}
+.error_tip{
+    color:red;
+}
 /*.wrap { 
     margin: 130px auto; 
     width:380px; 
